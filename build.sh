@@ -9,24 +9,11 @@ then
   PRERELEASETAG="$PrereleaseTag"
 fi
 
-# Use an appropriate version of nuget... preferring
-# first an existing NUGET variable, then NuGet, then
-# just falling back to the path.
-if [ -z "$NUGET" ]
-then
-  if [ -n "$NuGet" ]
-  then
-    NUGET="$NuGet"
-  else
-    NUGET="nuget"
-  fi
-fi
-
 if [ $(dotnet --info | grep "OS Platform" | grep -c Windows) -ne 0 ]
 then
   OS=Windows
-  $NUGET install -Verbosity quiet -OutputDirectory packages -Version 4.6.519 OpenCover
-  $NUGET install -Verbosity quiet -OutputDirectory packages -Version 2.4.5.0 ReportGenerator
+  dotnet nuget install -Verbosity quiet -OutputDirectory packages -Version 4.6.519 OpenCover
+  dotnet nuget install -Verbosity quiet -OutputDirectory packages -Version 2.4.5.0 ReportGenerator
   # Comment out the lines below to disable coverage
   OPENCOVER=$PWD/packages/OpenCover.4.6.519/tools/OpenCover.Console.exe
   REPORTGENERATOR=$PWD/packages/ReportGenerator.2.4.5.0/tools/ReportGenerator.exe

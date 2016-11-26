@@ -73,4 +73,4 @@ fi
 
 echo "Pushing $api version $version to $nuget_source"
 
-nuget push -Source "$nuget_source" -ApiKey "$api_key" "$packagefile"
+dotnet nuget push -Source "$nuget_source" -ApiKey "$api_key" "$packagefile"
