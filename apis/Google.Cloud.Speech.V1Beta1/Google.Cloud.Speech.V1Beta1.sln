@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Google.Cloud.Speech.V1Beta1", "Google.Cloud.Speech.V1Beta1\Google.Cloud.Speech.V1Beta1.xproj", "{A2D62EF9-1F25-42A3-98D9-01C1D5838CFE}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Google.Cloud.Speech.V1Beta1", "Google.Cloud.Speech.V1Beta1\Google.Cloud.Speech.V1Beta1.csproj", "{A2D62EF9-1F25-42A3-98D9-01C1D5838CFE}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Google.Cloud.Speech.V1Beta1.Snippets", "Google.Cloud.Speech.V1Beta1.Snippets\Google.Cloud.Speech.V1Beta1.Snippets.xproj", "{25D98E51-33AF-455B-B5DD-C0E17F65EA0F}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Google.Cloud.Speech.V1Beta1.Snippets", "Google.Cloud.Speech.V1Beta1.Snippets\Google.Cloud.Speech.V1Beta1.Snippets.csproj", "{25D98E51-33AF-455B-B5DD-C0E17F65EA0F}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Google.Longrunning", "..\Google.Longrunning\Google.Longrunning\Google.Longrunning.xproj", "{2DA31819-9094-49EC-96B6-744A481EB4F9}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Google.Longrunning", "..\Google.Longrunning\Google.Longrunning\Google.Longrunning.csproj", "{2DA31819-9094-49EC-96B6-744A481EB4F9}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Google.Api.CommonProtos", "..\..\..\gax-dotnet\src\Google.Api.CommonProtos\Google.Api.CommonProtos.xproj", "{29623F34-B99D-47C2-80C8-1A42C0F25A3B}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Google.Api.CommonProtos", "..\..\..\gax-dotnet\src\Google.Api.CommonProtos\Google.Api.CommonProtos.csproj", "{29623F34-B99D-47C2-80C8-1A42C0F25A3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
