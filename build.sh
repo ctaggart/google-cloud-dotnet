@@ -24,7 +24,7 @@ FIND=/usr/bin/find
 
 CONFIG=Release
 # Arguments to use for all build-related commands (build, pack)
-DOTNET_BUILD_ARGS="-c $CONFIG -o bin/$CONFIG -r win7-x86"
+DOTNET_BUILD_ARGS="-c $CONFIG -o bin/$CONFIG -r win10-x64"
 # Arguments to use for test-related commands (test)
 DOTNET_TEST_ARGS="$DOTNET_BUILD_ARGS"
 
@@ -46,15 +46,15 @@ echo Building tools
 
 cd tools
 # dotnet build $DOTNET_BUILD_ARGS `$FIND . -mindepth 1 -maxdepth 1 -name 'Google*' -type d `
-# dotnet restore Google.Cloud.Tools.sln
-# dotnet build $DOTNET_BUILD_ARGS Google.Cloud.Tools.sln
+dotnet restore Google.Cloud.Tools.sln
+dotnet build $DOTNET_BUILD_ARGS Google.Cloud.Tools.sln
 cd ..
 
 cd apis
 # dotnet build $DOTNET_BUILD_ARGS `$FIND * -mindepth 1 -maxdepth 1 -name 'Google*' -type d`
 
-dotnet restore Google.Cloud.BigQuery.V2/Google.Cloud.BigQuery.V2.sln
-dotnet build $DOTNET_BUILD_ARGS Google.Cloud.BigQuery.V2/Google.Cloud.BigQuery.V2.sln
+# dotnet restore Google.Cloud.BigQuery.V2/Google.Cloud.BigQuery.V2.sln
+# dotnet build $DOTNET_BUILD_ARGS Google.Cloud.BigQuery.V2/Google.Cloud.BigQuery.V2.sln
 
 # dotnet restore Google.Cloud.Language.V1/Google.Cloud.Language.V1.sln
 # dotnet build $DOTNET_BUILD_ARGS Google.Cloud.Language.V1/Google.Cloud.Language.V1.sln
