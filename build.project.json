@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "OpenCover": "4.6.519",
+    "ReportGenerator": "2.4.5.0"
+  },
+  "frameworks": {
+    "net451": {}
+  }
+}
