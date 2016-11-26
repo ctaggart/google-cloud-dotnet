@@ -24,7 +24,7 @@ FIND=/usr/bin/find
 
 CONFIG=Release
 # Arguments to use for all build-related commands (build, pack)
-DOTNET_BUILD_ARGS="-c $CONFIG"
+DOTNET_BUILD_ARGS="-c $CONFIG -o bin/$CONFIG -r win7-x86"
 # Arguments to use for test-related commands (test)
 DOTNET_TEST_ARGS="$DOTNET_BUILD_ARGS"
 
@@ -42,18 +42,37 @@ fi
 
 echo CLI args: $DOTNET_BUILD_ARGS
 
-echo Restoring
-
-dotnet restore -v Warning tools apis
-
 echo Building tools
 
 cd tools
-dotnet build $DOTNET_BUILD_ARGS `$FIND . -mindepth 1 -maxdepth 1 -name 'Google*' -type d `
+# dotnet build $DOTNET_BUILD_ARGS `$FIND . -mindepth 1 -maxdepth 1 -name 'Google*' -type d `
+# dotnet restore Google.Cloud.Tools.sln
+# dotnet build $DOTNET_BUILD_ARGS Google.Cloud.Tools.sln
 cd ..
 
 cd apis
-dotnet build $DOTNET_BUILD_ARGS `$FIND * -mindepth 1 -maxdepth 1 -name 'Google*' -type d`
+# dotnet build $DOTNET_BUILD_ARGS `$FIND * -mindepth 1 -maxdepth 1 -name 'Google*' -type d`
+
+dotnet restore Google.Cloud.BigQuery.V2/Google.Cloud.BigQuery.V2.sln
+dotnet build $DOTNET_BUILD_ARGS Google.Cloud.BigQuery.V2/Google.Cloud.BigQuery.V2.sln
+
+# dotnet restore Google.Cloud.Language.V1/Google.Cloud.Language.V1.sln
+# dotnet build $DOTNET_BUILD_ARGS Google.Cloud.Language.V1/Google.Cloud.Language.V1.sln
+
+# Google.Cloud.Metadata.V1/Google.Cloud.Metadata.V1.sln
+# Google.Cloud.Speech.V1Beta1/Google.Cloud.Speech.V1Beta1.sln
+# Google.Cloud.Storage.V1/Google.Cloud.Storage.V1.sln
+# Google.Cloud.Vision.V1/Google.Cloud.Vision.V1.sln
+# Google.Datastore.V1/Google.Datastore.V1.sln
+# Google.Devtools.AspNet/Google.Devtools.AspNet.sln
+# Google.Devtools.Clouderrorreporting.V1Beta1/Google.Devtools.Clouderrorreporting.V1Beta1.sln
+# Google.Devtools.Cloudtrace.V1/Google.Devtools.Cloudtrace.V1.sln
+# Google.Iam.V1/Google.Iam.V1.sln
+# Google.Logging.V2/Google.Logging.V2.sln
+# Google.Longrunning/Google.Longrunning.sln
+# Google.Monitoring.V3/Google.Monitoring.V3.sln
+# Google.Pubsub.V1/Google.Pubsub.V1.sln
+
 
 echo Testing
 
